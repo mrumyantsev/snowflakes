@@ -1,6 +1,7 @@
 from random import random, randint
 import pygame, simple_draw as D
 import entities.snowflake as S
+import constants as C
 
 
 class EventMouseMove:
@@ -52,16 +53,16 @@ class Engine:
     def make_snowflake(self) -> S.Snowflake:
         x = randint(-120, D.resolution[0] + 20)
         y = D.resolution[1] + 70 + randint(-50, 720)
-        speed_x = 1.0
-        speed_y = randint(4, 12)
-        accel_x = float(str(randint(1, 3)))
-        size = randint(30, 95)
+        speed_x = C.SNOWFLAKE_SPEED_X
+        speed_y = C.SNOWFLAKE_SPEED_Y_MIN + C.SNOWFLAKE_SPEED_Y_MAX*random()
+        accel_x = C.SNOWFLAKE_ACCEL_X_MIN + C.SNOWFLAKE_ACCEL_X_MAX*random()
+        size = randint(C.SNOWFLAKE_SIZE_MIN, C.SNOWFLAKE_SIZE_MAX)
         sub_color = randint(230, 250)
         color = (sub_color, sub_color, sub_color)
         trail_color = D.COLOR_BLACK
         factor_a = random()
         factor_b = random()
-        factor_c = 180 * random()
+        factor_c = 1 + 179*random()
 
         return S.Snowflake(x=x, y=y, speed_x=speed_x,
                          speed_y=speed_y, accel_x=accel_x, size=size,
