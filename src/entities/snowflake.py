@@ -22,7 +22,7 @@ class Snowflake:
         point = D.Point(self.__x, self.__y)
 
         D.snowflake(center=point, length=self.__size, color=color,
-                     factor_a=self.__factor_a, factor_b=self.__factor_b, factor_c=self.__factor_c)
+                    factor_a=self.__factor_a, factor_b=self.__factor_b, factor_c=self.__factor_c)
 
     def draw(self) -> None:
         self.__draw(self.__color)
