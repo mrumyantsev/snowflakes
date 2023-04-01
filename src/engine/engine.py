@@ -20,19 +20,33 @@ class EventMouseMove:
 
 
 class Engine:
-    def __init__(self, resolution, cfg) -> None:
-        D.resolution = resolution
-        D.background_color = D.COLOR_BLACK
-
-        pygame.init()
-        pygame.mouse.set_visible(False)
-
+    def __init__(self, cfg) -> None:
         self.__cfg = cfg
+
+        self.__resolution_width = 0
+        self.__resolution_height = 0
+
+        self.__choose_resolution()
+
         self.__snowflakes_number = self.__cfg['ent_snowflakesNumber']
         self.__snowflakes = [
             self.make_snowflake() for _ in range(self.__snowflakes_number)
         ]
+
+        D.resolution = (self.__resolution_width, self.__resolution_height)
+        D.background_color = D.COLOR_BLACK
+
+        pygame.init()
+        pygame.mouse.set_visible(False)
     
+    def __choose_resolution(self) -> None:
+        if self.__cfg['r_fullscreenMode']:
+            self.__resolution_width = self.__cfg['r_fullscreenResolutionWidth']
+            self.__resolution_height = self.__cfg['r_fullscreenResolutionHeight']
+        else:
+            self.__resolution_width = self.__cfg['r_windowResolutionWidth']
+            self.__resolution_height = self.__cfg['r_windowResolutionHeight']
+
     def run(self) -> None:
         while True:
             for i in range(self.__snowflakes_number):
@@ -49,8 +63,8 @@ class Engine:
             D.sleep(0.005)
     
     def make_snowflake(self) -> S.Snowflake:
-        x = randint(-120, D.resolution[0] + 20)
-        y = D.resolution[1] + 70 + randint(-50, 720)
+        x = randint(-120, self.__resolution_width*0.75)
+        y = randint(self.__resolution_height + 170, self.__resolution_height + 720)
         speed_x = self.__cfg['ent_snowflakeSpeedX']
         speed_y = self.__cfg['ent_snowflakeSpeedYMin'] + self.__cfg['ent_snowflakeSpeedYMax']*random()
         accel_x = self.__cfg['ent_snowflakeAccelXMin'] + self.__cfg['ent_snowflakeAccelXMax']*random()
