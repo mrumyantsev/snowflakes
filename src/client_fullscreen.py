@@ -1,8 +1,14 @@
+import lib.lib as L
+import config.config as C
 import engine.engine as E
-import constants as C
 
-resolution = C.FULLSCREEN_RESOLUTION
-snowflakes_number = C.SNOWFLAKES_NUMBER
+cfg_path = L.get_app_dir(__file__) + 'config.yml'
+cfg = C.load_config(cfg_path)
 
-engine = E.Engine(resolution, snowflakes_number)
+resolution = (
+    cfg['r_fullscreenResolutionWidth'],
+    cfg['r_fullscreenResolutionHeight']
+)
+
+engine = E.Engine(resolution, cfg)
 engine.run()

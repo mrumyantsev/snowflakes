@@ -1,7 +1,6 @@
 from random import random, randint
 import pygame, simple_draw as D
 import entities.snowflake as S
-import constants as C
 
 
 class EventMouseMove:
@@ -21,19 +20,18 @@ class EventMouseMove:
 
 
 class Engine:
-    def __init__(self, resolution=(640, 480), snowflakes_number=10) -> None:
+    def __init__(self, resolution, cfg) -> None:
         D.resolution = resolution
         D.background_color = D.COLOR_BLACK
 
         pygame.init()
         pygame.mouse.set_visible(False)
 
-        self.__snowflakes_number = snowflakes_number
+        self.__cfg = cfg
+        self.__snowflakes_number = self.__cfg['ent_snowflakesNumber']
         self.__snowflakes = [
             self.make_snowflake() for _ in range(self.__snowflakes_number)
         ]
-
-        self.__trail_color = D.COLOR_BLACK
     
     def run(self) -> None:
         while True:
@@ -53,10 +51,10 @@ class Engine:
     def make_snowflake(self) -> S.Snowflake:
         x = randint(-120, D.resolution[0] + 20)
         y = D.resolution[1] + 70 + randint(-50, 720)
-        speed_x = C.SNOWFLAKE_SPEED_X
-        speed_y = C.SNOWFLAKE_SPEED_Y_MIN + C.SNOWFLAKE_SPEED_Y_MAX*random()
-        accel_x = C.SNOWFLAKE_ACCEL_X_MIN + C.SNOWFLAKE_ACCEL_X_MAX*random()
-        size = randint(C.SNOWFLAKE_SIZE_MIN, C.SNOWFLAKE_SIZE_MAX)
+        speed_x = self.__cfg['ent_snowflakeSpeedX']
+        speed_y = self.__cfg['ent_snowflakeSpeedYMin'] + self.__cfg['ent_snowflakeSpeedYMax']*random()
+        accel_x = self.__cfg['ent_snowflakeAccelXMin'] + self.__cfg['ent_snowflakeAccelXMax']*random()
+        size = randint(self.__cfg['ent_snowflakeSizeMin'], self.__cfg['ent_snowflakeSizeMax'])
         sub_color = randint(230, 250)
         color = (sub_color, sub_color, sub_color)
         trail_color = D.COLOR_BLACK
@@ -65,6 +63,6 @@ class Engine:
         factor_c = 1 + 179*random()
 
         return S.Snowflake(x=x, y=y, speed_x=speed_x,
-                         speed_y=speed_y, accel_x=accel_x, size=size,
-                         color=color, trail_color=trail_color, factor_a=factor_a,
-                         factor_b=factor_b, factor_c=factor_c)
+                           speed_y=speed_y, accel_x=accel_x, size=size,
+                           color=color, trail_color=trail_color, factor_a=factor_a,
+                           factor_b=factor_b, factor_c=factor_c)
