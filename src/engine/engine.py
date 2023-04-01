@@ -38,9 +38,9 @@ class Engine:
     def run(self) -> None:
         while True:
             for i in range(self.__snowflakes_number):
-                self.__snowflakes[i].draw()
-                self.__snowflakes[i].move()
                 self.__snowflakes[i].draw_trail()
+                self.__snowflakes[i].move()
+                self.__snowflakes[i].draw()
                 if self.__snowflakes[i].y < -170:
                     self.__snowflakes[i] = self.make_snowflake()
 
