@@ -1,8 +1,8 @@
-import engine.engine as enginem
+import engine.engine as E
 import constants
 
 resolution = constants.WINDOW_RESOLUTION
 snowflakes_number = constants.SNOWFLAKES_NUMBER
 
-engine = enginem.SnowflakesEngine(resolution, snowflakes_number)
+engine = E.Engine(resolution, snowflakes_number)
 engine.run()
