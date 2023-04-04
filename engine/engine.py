@@ -78,6 +78,6 @@ class Engine:
         factor_c = 1 + 179*random.random()
 
         return snowflake.Snowflake(x=x, y=y, speed_x=speed_x,
-                           speed_y=speed_y, accel_x=accel_x, size=size,
-                           color=color, trail_color=trail_color, factor_a=factor_a,
-                           factor_b=factor_b, factor_c=factor_c)
+                                   speed_y=speed_y, accel_x=accel_x, size=size,
+                                   color=color, trail_color=trail_color, factor_a=factor_a,
+                                   factor_b=factor_b, factor_c=factor_c)
