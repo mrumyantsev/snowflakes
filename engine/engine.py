@@ -1,6 +1,7 @@
-from random import random, randint
-import pygame, simple_draw as D
-import entities.snowflake as S
+import pygame
+import simple_draw
+import entities.snowflake as snowflake
+import random
 
 
 class EventMouseMove:
@@ -33,8 +34,8 @@ class Engine:
             self.make_snowflake() for _ in range(self.__snowflakes_number)
         ]
 
-        D.resolution = (self.__resolution_width, self.__resolution_height)
-        D.background_color = D.COLOR_BLACK
+        simple_draw.resolution = (self.__resolution_width, self.__resolution_height)
+        simple_draw.background_color = simple_draw.COLOR_BLACK
 
         pygame.init()
         pygame.mouse.set_visible(False)
@@ -60,23 +61,23 @@ class Engine:
                 pygame.quit()
                 break
             
-            D.sleep(0.005)
+            simple_draw.sleep(0.005)
     
-    def make_snowflake(self) -> S.Snowflake:
-        x = randint(-120, self.__resolution_width*0.75)
-        y = randint(self.__resolution_height + 170, self.__resolution_height + 720)
+    def make_snowflake(self) -> snowflake.Snowflake:
+        x = random.randint(-120, self.__resolution_width*0.75)
+        y = random.randint(self.__resolution_height + 170, self.__resolution_height + 720)
         speed_x = self.__cfg['ent_snowflakeSpeedX']
-        speed_y = self.__cfg['ent_snowflakeSpeedYMin'] + self.__cfg['ent_snowflakeSpeedYMax']*random()
-        accel_x = self.__cfg['ent_snowflakeAccelXMin'] + self.__cfg['ent_snowflakeAccelXMax']*random()
-        size = randint(self.__cfg['ent_snowflakeSizeMin'], self.__cfg['ent_snowflakeSizeMax'])
-        sub_color = randint(230, 250)
+        speed_y = self.__cfg['ent_snowflakeSpeedYMin'] + self.__cfg['ent_snowflakeSpeedYMax']*random.random()
+        accel_x = self.__cfg['ent_snowflakeAccelXMin'] + self.__cfg['ent_snowflakeAccelXMax']*random.random()
+        size = random.randint(self.__cfg['ent_snowflakeSizeMin'], self.__cfg['ent_snowflakeSizeMax'])
+        sub_color = random.randint(230, 250)
         color = (sub_color, sub_color, sub_color)
-        trail_color = D.COLOR_BLACK
-        factor_a = random()
-        factor_b = random()
-        factor_c = 1 + 179*random()
+        trail_color = simple_draw.COLOR_BLACK
+        factor_a = random.random()
+        factor_b = random.random()
+        factor_c = 1 + 179*random.random()
 
-        return S.Snowflake(x=x, y=y, speed_x=speed_x,
+        return snowflake.Snowflake(x=x, y=y, speed_x=speed_x,
                            speed_y=speed_y, accel_x=accel_x, size=size,
                            color=color, trail_color=trail_color, factor_a=factor_a,
                            factor_b=factor_b, factor_c=factor_c)

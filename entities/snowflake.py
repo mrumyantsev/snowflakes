@@ -1,10 +1,10 @@
-import simple_draw as D
+import simple_draw
 
 
 class Snowflake:
     def __init__(self, x=0.0, y=0.0,
                  speed_x=1.0, speed_y=10.0, accel_x=1.5,
-                 size=100, color=D.COLOR_WHITE, trail_color=D.COLOR_BLACK,
+                 size=100, color=simple_draw.COLOR_WHITE, trail_color=simple_draw.COLOR_BLACK,
                  factor_a=0.6, factor_b=0.35, factor_c=60.0) -> None:
         self.__x = x
         self.__y = y
@@ -19,9 +19,9 @@ class Snowflake:
         self.__factor_c = factor_c
 
     def __draw(self, color) -> None:
-        point = D.Point(self.__x, self.__y)
+        point = simple_draw.Point(self.__x, self.__y)
 
-        D.snowflake(center=point, length=self.__size, color=color,
+        simple_draw.snowflake(center=point, length=self.__size, color=color,
                     factor_a=self.__factor_a, factor_b=self.__factor_b, factor_c=self.__factor_c)
 
     def draw(self) -> None:
