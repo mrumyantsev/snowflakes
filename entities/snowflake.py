@@ -36,7 +36,7 @@ class Snowflake:
 
     @property
     def accel_x(self) -> float:
-        return self.accel_x
+        return self.__accel_x
 
     @accel_x.setter
     def accel_x(self, value: float) -> None:
