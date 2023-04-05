@@ -34,6 +34,7 @@ class Engine:
             self.make_snowflake() for _ in range(self.__snowflakes_number)
         ]
 
+        simple_draw.caption = 'Snowflakes Screensaver'
         simple_draw.resolution = (self.__resolution_width, self.__resolution_height)
         simple_draw.background_color = simple_draw.COLOR_BLACK
 
