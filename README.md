@@ -1,5 +1,7 @@
 # Snowflakes Screensaver
 
+![screenshot_v0-1](https://user-images.githubusercontent.com/36193247/230243326-fa160e71-460e-4b48-bd69-d75b2291e1f7.png)
+
 This desktop application can:
 
 - Spawn snowflakes in window mode or fullscreen mode.
