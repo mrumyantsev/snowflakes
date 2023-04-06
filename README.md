@@ -1,12 +1,12 @@
 # Snowflakes Screensaver
 
-![screenshot_v0-1](https://user-images.githubusercontent.com/36193247/230243326-fa160e71-460e-4b48-bd69-d75b2291e1f7.png)
-
 This desktop application can:
 
 - Spawn snowflakes in window mode or fullscreen mode.
 - Spawn more of less snowflakes, on your desire.
 - Be able to change snowflake parameters, like size, speed and acceleration.
+
+![screenshot_v0-1](https://user-images.githubusercontent.com/36193247/230243326-fa160e71-460e-4b48-bd69-d75b2291e1f7.png)
 
 ### How to use it
 
