@@ -8,7 +8,7 @@ This desktop application can:
 - Spawn more of less snowflakes, on your desire.
 - Be able to change snowflake parameters, like size, speed and acceleration.
 
-![screenshot_v0-1](https://user-images.githubusercontent.com/36193247/230354528-b4983658-8c03-4c0c-8437-15e08138b521.png)
+![v0_1](https://user-images.githubusercontent.com/36193247/230888007-9ea05445-092b-4c35-87f1-091f63fa6337.png)
 
 ### How to use it
 
