@@ -1,4 +1,4 @@
-# Snowflakes Screensaver
+# Snowflakes Screensaver v0.1
 
 This desktop application can:
 
