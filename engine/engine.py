@@ -1,6 +1,6 @@
 import pygame
 import simple_draw
-import entities.snowflake as snowflake
+from entities import snowflake
 import random
 
 
