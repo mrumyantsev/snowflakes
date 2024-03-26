@@ -1,7 +1,13 @@
+import os
+
+
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = 'True'
+
+
+import random
 import pygame
 import simple_draw
 from snowflake import snowflake
-import random
 
 
 class EventMouseMove:
