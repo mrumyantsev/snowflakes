@@ -2,10 +2,12 @@
 
 **Snowflakes Screensaver** is a screensaver that shows falling snowflakes being blown away by the wind.
 
-![Snowflakes](./snowflakes.png "Falling snowflakes on the screen")\
-*Falling snowflakes on the screen*
+![Snowflakes](./snowflakes.png "Falling snowflakes")\
+*Falling snowflakes displayed on screen*
 
-The speed at which snowflakes fall, their number, and the acceleration of snowflakes by wind can be configured in the configuration file.
+## Configuration
+
+Open and edit the configuration file to change the snowflakes' falling speed, number of snowflakes, and screen resolution.
 
 ```
 vim ./configs/config.yml
@@ -15,29 +17,29 @@ vim ./configs/config.yml
 
 **Operating system:**
 
-- Windows / MacOS / Linux
+- Windows / macOS / Linux/UNIX.
 
 **Software:**
 
-- Development tools for Python >=v3.6
-- pip package manager for Python
-- make utility
+- Python programming language >=3.6.
+- pip package manager for Python.
+- make utility.
 
 ## Installation and launch
 
-Before starting, you should download and install the packages that are used in this application.
+Download and install the packages required for this application.
 
 ```
 pip install pyyaml pygame simple_draw
 ```
 
-You can run the program with the command.
+Launch the program.
 
 ```
 make fast-run
 ```
 
-Or an equivalent command.
+Launch the program (short command).
 
 ```
 make
