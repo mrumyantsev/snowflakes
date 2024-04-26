@@ -1,45 +1,45 @@
-# Snowflakes Screensaver
+# Заставка "снежинки"
 
-**Snowflakes Screensaver** is a screensaver that shows falling snowflakes being blown away by the wind.
+**Заставка "снежинки"** - это экранная заставка (хранитель экрана), которая показывает падающие снежинки, уносимые ветром.
 
-![Snowflakes](./snowflakes.png "Falling snowflakes")\
-*Falling snowflakes displayed on screen*
+![Снежинки](./snowflakes.png "Падающие снежинки")\
+*Падающие снежинки, отображаемые на экране*
 
-## Configuration
+## Конфигурация
 
-Open and edit the configuration file to change the snowflakes' falling speed, number of snowflakes, and screen resolution.
+Откройте и отредактируйте файл конфигурации, чтобы изменить скорость падения снежинок, их количество и разрешение экрана.
 
 ```
 vim ./configs/config.yml
 ```
 
-## System requirements
+## Системные требования
 
-**Operating system:**
+**Операционная система:**
 
 - Windows / macOS / Linux/UNIX.
 
-**Software:**
+**Программное обеспечение:**
 
-- Python programming language >=3.6.
-- pip package manager for Python.
-- make utility.
+- язык программирования Python >=3.6;
+- менеджер пакетов pip для Python;
+- утилита make.
 
-## Installation and launch
+## Установка и запуск
 
-Download and install the packages required for this application.
+Скачайте и установите пакеты, необходимые для данного приложения.
 
 ```
 pip install pyyaml pygame simple_draw
 ```
 
-Launch the program.
+Запустите программу.
 
 ```
 make fast-run
 ```
 
-Launch the program (short command).
+Запустите программу (сокращенная команда).
 
 ```
 make
